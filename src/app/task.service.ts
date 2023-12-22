@@ -4,6 +4,7 @@ import TaskModel from './models/taskModel';
 import { Observable } from 'rxjs';
 import TaskListModel from './models/taskListmodel';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ import { HttpClient } from '@angular/common/http';
 export class TaskService {
 
   constructor(private apiConfigService:ApiConfigService,private httpClient: HttpClient) { }
-  API_BASE_URL = 'http://localhost:3000';
+  API_BASE_URL = environment;
   getAllTaskLists(): Observable<TaskListModel[]> {
     return this.apiConfigService.getTaskLists('tasklists');
   }

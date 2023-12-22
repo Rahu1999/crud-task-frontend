@@ -2,13 +2,14 @@ import TaskModel from "src/app/models/taskModel"
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import TaskListModel from './models/taskListmodel';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiConfigService {
 
-  API_BASE_URL = 'http://localhost:3000';
+  API_BASE_URL = environment.baseURL;
   constructor(private httpClient: HttpClient) { }
 
   //API call to Backend
